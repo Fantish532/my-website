@@ -4,18 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* Header and navigation */
+        header {
+            background: linear-gradient(90deg, #4e54c8, #8f94fb);
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background: #fff;
+            color: #4e54c8;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        section:nth-child(even) {
+            background: #f4f4f4;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #4e54c8;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero section */
+        #home {
+            background: url('https://source.unsplash.com/1600x600/?technology,office') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 8rem 1rem;
+        }
+        #home h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        /* Portfolio cards */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .portfolio-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Skills list */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .skills-list span {
+            background: #4e54c8;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* Contact */
+        #contact p {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>My Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio/Projects</a></li>
-                <li><a href="#resume">Resume/CV</a></li>
-                <li><a href="#skills">Skills & Certifications</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -23,36 +155,57 @@
 
     <section id="home">
         <h2>Welcome to My Portfolio</h2>
-        <p>This is the home section.</p>
+        <p>Hi! I'm [Your Name], a passionate developer and designer.</p>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Write a short bio about yourself here.</p>
+        <p>I am a software developer with a knack for creating elegant and functional web applications. I love learning new technologies and applying them to solve real-world problems.</p>
     </section>
 
     <section id="portfolio">
         <h2>Portfolio / Projects</h2>
-        <p>Showcase your work here.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <h3>Project 1</h3>
+                <p>A brief description of your project goes here. Highlight key technologies and features.</p>
+            </div>
+            <div class="portfolio-card">
+                <h3>Project 2</h3>
+                <p>A brief description of your project goes here. Highlight key technologies and features.</p>
+            </div>
+            <div class="portfolio-card">
+                <h3>Project 3</h3>
+                <p>A brief description of your project goes here. Highlight key technologies and features.</p>
+            </div>
+        </div>
     </section>
 
     <section id="resume">
         <h2>Resume / CV</h2>
-        <p>Link to or describe your resume/CV here.</p>
+        <p>You can download my resume <a href="resume.pdf" target="_blank">here</a>.</p>
     </section>
 
     <section id="skills">
         <h2>Skills & Certifications</h2>
-        <p>List your skills and certifications here.</p>
+        <div class="skills-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Python</span>
+            <span>Certifications</span>
+        </div>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: yourname@example.com</p>
+        <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2025 My Portfolios</p>
+        <p>&copy; 2025 My Portfolio</p>
     </footer>
+
 </body>
 </html>
